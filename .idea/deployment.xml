@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="8GPU" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="8GPU">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/jiaxuliu/GANs/AttributeGAN-w" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="interface">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="jiaxuliu@172.28.9.19:30138">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/pycharm_project_429" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
