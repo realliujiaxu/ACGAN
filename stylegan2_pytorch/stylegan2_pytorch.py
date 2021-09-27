@@ -1095,10 +1095,8 @@ class Trainer():
             torch.save(attr, attr_path)
             torch.save(noi, noi_path)
 
-    def edit(self, img_path='./scene256.jpg', checkpoint=None):
+    def edit(self, img_path, attribute_processor):
         img_name = os.path.basename(img_path).split(".")[0]
-        if checkpoint is None:
-            checkpoint = self.steps
         dir_name = self.name + '/' + 'single_edited'
         ext = self.image_extension
 
@@ -1123,65 +1121,7 @@ class Trainer():
             torch.save(attr, attr_path)
             torch.save(noi, noi_path)
 
-        attr_list = []
-        attr_list.append(attr)
-        self.add_attr(attr_list, [31], attr, 0.4)
-        self.add_attr(attr_list, [-8, -11, 9], attr, 0.4)
-        self.add_attr(attr_list, [-8, 17, -39], attr, 0.3)
-        self.add_attr(attr_list, [9, 31], attr, 0.4)
-
-        # self.add_attr(attr_list, [5], attr, 0.6)
-        # self.add_attr(attr_list, [-11, -39], attr, 0.4)
-        # # self.add_attr(attr_list, [16], attr, 0.5)
-        # self.add_attr(attr_list, [13, 14, 25], attr, 0.2)
-
-        # old
-        # new_attr = attr_list[-1].clone()
-        # new_attr[:, 39] -= 0.3
-        # new_attr[:, 11] -= 0.3
-        # attr_list.append(new_attr)
-        # new_attr[:, 8] -= 0.2
-
-        # new_attr = attr_list[-1].clone()
-        # new_attr[:, 13] += 0.3
-        # new_attr[:, 25] += 0.3
-        # new_attr[:, 31] += 0.3
-        # attr_list.append(new_attr)
-        #
-        # new_attr = attr_list[-1].clone()
-        # new_attr[:, 9] -= 0.3
-        # new_attr[:, 8] += 0.2
-        # new_attr[:, 36] += 0.4
-        # attr_list.append(new_attr)
-        #
-        # new_attr = attr_list[-1].clone()
-        # new_attr[:, 27] += 0.3
-        # new_attr[:, 7] += 0.3
-        # new_attr[:, 26] += 0.3
-        # attr_list.append(new_attr)
-        #
-        # new_attr = attr_list[-1].clone()
-        # new_attr[:, [1,3,6]] += 0.3
-        # attr_list.append(new_attr)
-
-        # Attribute edit for female
-        # new_attr = attr_list[-1].clone()
-        # new_attr[:, 13] -= 0.3
-        # new_attr[:, 9] -= 0.3
-        # new_attr[:, 31] += 0.3
-        # new_attr[:, 36] += 0.4
-        # attr_list.append(new_attr)
-
-        # Attribute edit for male
-        # new_attr = attr_list[-1].clone()
-        # new_attr[:, 39] -= 0.3
-        # new_attr[:, 9] += 0.3
-        # new_attr[:, 31] += 0.3
-        # new_attr[:, 21] += 0.1
-        # new_attr[:, 25] += 0.3
-        # new_attr[:, 13] += 0.3
-
-        moving_attrs = torch.cat(attr_list, dim=0)
+        moving_attrs = torch.cat(attribute_processor(attr), dim=0)
 
         # noi = noi.expand(len(moving_attrs), -1, -1, -1)
         # latents = [(latents, 7)]

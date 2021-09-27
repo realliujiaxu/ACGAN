@@ -193,3 +193,12 @@ def slerp(val, low, high):
     so = torch.sin(omega)
     res = (torch.sin((1.0 - val) * omega) / so).unsqueeze(1) * low + (torch.sin(val * omega) / so).unsqueeze(1) * high
     return res
+
+def add_attr(attr_list, edit_attr_list, base_attr=None, degree=0.3):
+    new_attr = attr_list[-1].clone() if base_attr is None else base_attr.clone()
+    for edit_attr in edit_attr_list:
+        if edit_attr > 0:
+            new_attr[:, edit_attr - 1] += degree
+        else:
+            new_attr[:, -edit_attr - 1] -= degree
+    attr_list.append(new_attr)

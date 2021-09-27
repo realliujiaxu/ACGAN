@@ -174,18 +174,6 @@ def train_from_folder(
         model.load(load_from)
         save_path = model.edit(edit)
         print(f'edited real images generated at {save_path}')
-
-        # for edit in sorted(glob.glob('../data/images/*.jpg')):
-        #     print(f'start editing {edit}')
-        #     save_path = model.edit(edit)
-        #     if save_path == '':
-        #         print(f'skip {edit}')
-        #     else:
-        #         # shutil.copy(edit, os.path.join('results/face256random/edited', os.path.basename(edit)))
-        #         im = Image.open(edit)
-        #         im.convert('RGB').resize((256,256), Image.ANTIALIAS).save(
-        #             'results/face256random/single_edited/' + os.path.basename(edit)[:-4] + ".jpg", "JPEG")
-        #         print(f'edited real images generated at {save_path}')
         return
 
     if generate_interpolation:

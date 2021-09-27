@@ -7,6 +7,9 @@
           <mappings>
             <mapping deploy="/home/jiaxuliu/GANs/AttributeGAN-w" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/results" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="interface">

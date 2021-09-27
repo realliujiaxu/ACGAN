@@ -330,6 +330,8 @@ class StyleGAN2(nn.Module):
 
         self.D_cl = None
 
+        self.latent_dim = latent_dim
+
         if cl_reg:
             from contrastive_learner import ContrastiveLearner
             # experimental contrastive loss discriminator regularization
