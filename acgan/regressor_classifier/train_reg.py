@@ -8,7 +8,7 @@ import os
 import datetime
 from torch.utils.tensorboard import SummaryWriter
 import argparse
-from dataset.dataset_factory import DatasetType, get_dateset
+from acgan.dataset_factory import DatasetType, get_dateset
 
 class RegressorRunner:
     def __init__(self, regressor, optimizer, save_dir, name, epoch, phase = 'train', trainloader=None, testloader=None):
@@ -113,7 +113,7 @@ class RegressorRunner:
         self.optimizer.load_state_dict(load_data['optimizer'])
         self.current_epoch = load_data['epoch']
 
-# 训练属性回归器
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Traing and testing attribute regressor.')

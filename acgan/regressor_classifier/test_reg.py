@@ -1,7 +1,10 @@
+import torch.nn as nn
+import torch.optim as optim
 from tqdm import tqdm
+from torchvision import models
 from torch.utils.data import DataLoader
 from stylegan2_pytorch.regressor import build_regressor
-from dataset.dataset import SceneryDataset
+from stylegan2_pytorch.dataset import Dataset, AttributeDataset, SceneryDataset
 import torch
 
 
