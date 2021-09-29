@@ -2,10 +2,9 @@ from torch.utils.data import DataLoader
 
 import eval_factory
 from acgan.model_factory import ClsRegFactory
-from dataset_factory import DatasetType, get_dateset
+from dataset.dataset_factory import DatasetType, get_dateset
 
 if __name__ == '__main__':
-    import os
     # os.environ['CUDA_VISIBLE_DEVICES'] = '5,6'
 
     # 测试CelebA数据集 回归器精度

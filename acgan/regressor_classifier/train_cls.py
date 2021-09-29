@@ -4,7 +4,7 @@ from tqdm import tqdm
 from torch.utils.data import DataLoader
 
 from acgan.model_factory import ClsRegFactory
-from stylegan2_pytorch.dataset import CelebADatasetWithName
+from dataset.dataset import CelebADatasetWithName
 import torch
 import os
 import datetime

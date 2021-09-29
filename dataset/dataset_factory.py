@@ -1,6 +1,6 @@
 from enum import Enum
 
-from stylegan2_pytorch.dataset import AttributeDataset, CelebADataset, SceneryDataset
+from dataset.dataset import AttributeDataset, CelebADataset, SceneryDataset
 
 celeba_path = '/home/jiaxuliu/GANs/data/CombinedFace/celeba'
 secene_path = "/home/jiaxuliu/GANs/data/CombinedFace/SceneDataset"

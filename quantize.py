@@ -2,13 +2,12 @@ import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
 from torch.utils.data import DataLoader
-from stylegan2_pytorch.dataset import CelebADataset
+from dataset.dataset import CelebADataset
 from stylegan2_pytorch.regressor import build_regressor
 import torch
 import os
 import datetime
 from torch.utils.tensorboard import SummaryWriter
-import argparse
 
 
 class RegressorRunner:

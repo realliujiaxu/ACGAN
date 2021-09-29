@@ -5,7 +5,7 @@ from torchvision.transforms import transforms
 from tqdm import tqdm
 
 from acgan.model_factory import TrainedClsRegFactory
-from stylegan2_pytorch.dataset import convert_transparent_to_rgb, expand_greyscale
+from dataset.dataset import convert_transparent_to_rgb, expand_greyscale
 
 regressor = TrainedClsRegFactory().get_scene_regressor()
 regressor.eval()

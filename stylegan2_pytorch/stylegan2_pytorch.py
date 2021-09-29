@@ -1,13 +1,10 @@
 import glob
 
-import torch
-
 from stylegan2_pytorch.exception import NanException, raise_if_nan
 from stylegan2_pytorch.model import StyleGAN2
 from stylegan2_pytorch.regressor import build_regressor
 
 import os
-import math
 import json
 
 from tqdm import tqdm
@@ -30,7 +27,7 @@ from pathlib import Path
 
 from torch.utils.tensorboard import SummaryWriter
 import datetime
-from stylegan2_pytorch.dataset import AttributeDataset
+from dataset.dataset import AttributeDataset
 import time
 
 from stylegan2_pytorch.helper import *
